@@ -1,4 +1,7 @@
+// dependencies
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 class SmurfForm extends Component {
   constructor(props) {

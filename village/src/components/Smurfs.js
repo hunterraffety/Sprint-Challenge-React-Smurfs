@@ -1,5 +1,12 @@
+// dependencies
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import axios from 'axios';
 
+// styles
+import './Smurfs.css';
+
+// components
 import Smurf from './Smurf';
 
 class Smurfs extends Component {

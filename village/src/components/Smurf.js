@@ -1,4 +1,10 @@
-import React from 'react';
+// dependencies
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import axios from 'axios';
+
+// styles
+import './Smurf.css';
 
 const Smurf = props => {
   return (
