@@ -11,18 +11,22 @@ import Smurf from './Smurf';
 
 class Smurfs extends Component {
   render() {
+    console.log(`smurfs`, this.props);
     return (
       <div className='Smurfs'>
         <h1>Smurf Village</h1>
         <ul>
           {this.props.smurfs.map(smurf => {
+            console.log(`what props`, smurf);
+            console.log(`func`, this.props);
             return (
               <Smurf
-                name={smurf.name}
-                id={smurf.id}
                 age={smurf.age}
+                deleteSmurf={this.props.deleteSmurf}
                 height={smurf.height}
+                id={smurf.id}
                 key={smurf.id}
+                name={smurf.name}
               />
             );
           })}

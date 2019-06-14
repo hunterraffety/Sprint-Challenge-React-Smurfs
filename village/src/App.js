@@ -9,6 +9,7 @@ import './App.css';
 // components
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
+import Smurf from './components/Smurf';
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +48,16 @@ class App extends Component {
       });
   };
 
+  deleteSmurf = id => {
+    axios
+      .delete(`http://localhost:3333/smurfs/${id}`)
+      .then(res => {
+        this.setState({ smurfs: res.data });
+        this.props.history.push('/');
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className='App'>
@@ -67,10 +78,15 @@ class App extends Component {
         <Route
           exact
           path='/'
-          render={props => <Smurfs {...props} smurfs={this.state.smurfs} />}
+          render={props => (
+            <Smurfs
+              {...props}
+              smurfs={this.state.smurfs}
+              deleteSmurf={this.deleteSmurf}
+            />
+          )}
         />
         <Route
-          exact
           path='/smurf-form'
           render={props => (
             <SmurfForm
