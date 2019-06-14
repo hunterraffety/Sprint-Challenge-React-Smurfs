@@ -1,10 +1,8 @@
-// dependencies
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import axios from 'axios';
 
 class SmurfForm extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       name: '',
@@ -13,21 +11,10 @@ class SmurfForm extends Component {
     };
   }
 
-  addSmurf = e => {
-    e.preventDefault();
+  addSmurf = event => {
+    event.preventDefault();
     // add code to create the smurf using the api
-    axios
-      .post('http://localhost:3333/smurfs')
-      .then(res => {
-        this.setState({
-          [e.target.name]: e.target.value
-        });
-        this.props.history.push('/smurfs');
-      })
-      .catch(err => {
-        console.log(`error:`, err);
-      });
-
+    this.props.addSmurf(this.state);
     this.setState({
       name: '',
       age: '',
