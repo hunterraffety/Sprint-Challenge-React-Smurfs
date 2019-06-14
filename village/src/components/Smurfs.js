@@ -14,7 +14,7 @@ class Smurfs extends Component {
     console.log(`smurfs`, this.props);
     return (
       <div className='Smurfs'>
-        <h1>Smurf Village</h1>
+        <h1>The Sims: Smurf Village</h1>
         <ul>
           {this.props.smurfs.map(smurf => {
             console.log(`what props`, smurf);

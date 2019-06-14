@@ -61,19 +61,24 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <div className='nav'>
-          <NavLink exact to='/' className='navlink'>
-            <h1>Smurfemon - don't catch them all.</h1>
-          </NavLink>
-          <span className='sub'>All The Smurfs!</span>
-          <nav>
+        <div className='home-container'>
+          <div className='nav'>
             <NavLink exact to='/' className='navlink'>
-              Home
+              <h1>
+                Smurfemon
+                <div className='sub'>don't catch them all.</div>
+              </h1>
             </NavLink>
-            <NavLink to='/smurf-form' className='navlink'>
-              Add A Smurf
-            </NavLink>
-          </nav>
+            <span className='sub-header'>All The Smurfs!</span>
+            <nav>
+              <NavLink exact to='/' className='navlink border'>
+                Home
+              </NavLink>
+              <NavLink to='/smurf-form' className='navlink border'>
+                Add A Smurf
+              </NavLink>
+            </nav>
+          </div>
         </div>
         <Route
           exact

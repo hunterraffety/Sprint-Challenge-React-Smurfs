@@ -1,0 +1,12 @@
+.Smurfs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+}
+
+.Smurfs h1 {
+  margin: 3rem;
+  color: #a5988b;
+}
